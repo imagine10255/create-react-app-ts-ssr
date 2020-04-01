@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
-    "outDir": "./dist",
+    "baseUrl": "../src",
+    "outDir": "../dist",
     "target": "es5",
     "typeRoots": [
-      "./src/@types",
-      "./node_modules/@types"
+      "../src/@types",
+      "../node_modules/@types"
     ],
     "lib": [
       "dom",
@@ -21,7 +21,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noImplicitAny": false,
-    "module": "esnext",
     "moduleResolution": "node",
     "strictNullChecks": false,
     "jsx": "react",
