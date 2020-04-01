@@ -23,20 +23,14 @@ const App = require('../src/App').default;
 
 exports = module.exports;
 
-exports.render = (routes) => {
+exports.render = () => {
     return (req, res, next) => {
 
         /**
          * Take routes collection and see if it's a valid app's route
          */
-        var match = routes.find(route => matchPath(req.path, {
-            path: route,
-            exact: true,
-        }));
 
-        const is404 = req._possible404;
 
-        if (match || is404) {
             /**
              * Point to the html file created by CRA's build tool and open it
              */
@@ -50,20 +44,12 @@ exports.render = (routes) => {
 
                 const location = req.url;
 
-                if (is404) {
-                    /**
-                     * Set the app's response to 404 OK (https://httpstatuses.com/404)
-                     */
-                    res.writeHead(404, { 'Content-Type': 'text/html' })
-                    console.log(`SSR of unrouted path ${req.path} (404 ahead)`)
-                }
-                else {
+
                     /**
                      * Set the app's response to 200 OK (https://httpstatuses.com/200)
                      */
                     res.writeHead(200, { 'Content-Type': 'text/html' })
                     console.log(`SSR of ${req.path}`);
-                }
 
                 const store = configureStore(initialState);
 
@@ -93,9 +79,5 @@ exports.render = (routes) => {
                 );
             });
         }
-        else {
-            req._possible404 = true;
-            return next();
-        }
-    };
+
 };

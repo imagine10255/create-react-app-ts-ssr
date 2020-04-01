@@ -1,17 +1,13 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
+    "paths": {
+      "*": ["*", "./src/@types/*"]
+    },
     "outDir": "./dist",
     "target": "es5",
-    "typeRoots": [
-      "./src/@types",
-      "./node_modules/@types"
-    ],
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -24,13 +20,7 @@
     "moduleResolution": "node",
     "strictNullChecks": false,
     "jsx": "react",
-    "noEmit": true,
-    "module": "esnext"
+    "noEmit": true
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "src"
-  ]
+  "exclude": ["node_modules"]
 }

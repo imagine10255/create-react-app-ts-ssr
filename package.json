@@ -41,7 +41,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-server2": "NODE_ENV=production ts-node --project server.tsconfig.json server/bootstrap.js",
+    "start-server2": "NODE_ENV=production ts-node --project tsconfig.json server/bootstrap.js",
     "start-server": "NODE_ENV=production node server/bootstrap.js"
   },
   "eslintConfig": {
