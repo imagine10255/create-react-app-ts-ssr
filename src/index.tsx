@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import configureStore from './configure-store';
+
+// @ts-ignore
+const initialState = global.window && global.window.__INITIAL_STATE__;
+const store = configureStore(initialState);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App store={store}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
